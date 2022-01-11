@@ -54,6 +54,7 @@ export const WorkingHours = styled(Date)`
 `;
 
 export const JobPosition = styled.h3`
+  color: ${({ theme }) => theme.text};
   flex-basis: 100%;
   margin: 5px 0;
 `;
