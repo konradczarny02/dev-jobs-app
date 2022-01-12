@@ -8,12 +8,10 @@ import {
   Company,
   Location,
 } from 'components/molecules/JobAd/JobAd.styles';
-import { ReactComponent as CompanyLogo } from 'assets/images/CompanyLogo.svg';
 
 const JobAd = ({ details }) => {
   return (
     <Wrapper>
-      <CompanyLogo />
       <DetailsWrapper>
         <Date>5h ago</Date>
         <WorkingHours>Full Time</WorkingHours>
