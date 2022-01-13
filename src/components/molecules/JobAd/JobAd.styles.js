@@ -12,7 +12,7 @@ export const Wrapper = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  svg {
+  img {
     position: absolute;
     top: -15px;
     left: 30px;
