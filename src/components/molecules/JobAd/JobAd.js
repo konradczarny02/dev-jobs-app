@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Wrapper,
   DetailsWrapper,
@@ -10,9 +11,10 @@ import {
 } from 'components/molecules/JobAd/JobAd.styles';
 
 const JobAd = ({ details }) => {
+  let navigate = useNavigate();
   const img = require('assets/JobAdsLogos/' + details.company.toLowerCase().split(' ').join('') + '.svg');
   return (
-    <Wrapper>
+    <Wrapper onClick={() => navigate('/details/' + details.company)}>
       <img src={img} alt="logo" />
       <DetailsWrapper>
         <Date>{details.postedAt}</Date>
