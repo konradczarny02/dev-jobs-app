@@ -15,6 +15,10 @@ const JobsProvider = ({ children }) => {
       .catch((error) => console.warn(error));
   }, []);
 
+  useEffect(() => {
+    axios.get('jobs/1').then(({ data }) => console.log(data));
+  }, []);
+
   return <JobsContext.Provider value={{ jobs }}>{children}</JobsContext.Provider>;
 };
 
