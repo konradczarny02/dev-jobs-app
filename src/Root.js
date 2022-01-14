@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 import Home from 'pages/Home/Home';
 import JobsProvider from 'providers/JobsProvider';
+import Details from 'pages/Details/Details';
 
 const Root = () => {
   const [themeMode, setThemeMode] = useState('light');
@@ -16,6 +17,7 @@ const Root = () => {
         <JobsProvider>
           <Routes>
             <Route path="/" element={<Home handleChangeTheme={handleChangeTheme} />} />
+            <Route path="details/:company" element={<Details handleChangeTheme={handleChangeTheme} />} />
           </Routes>
         </JobsProvider>
       </BrowserRouter>

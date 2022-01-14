@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.li`
+  cursor: pointer;
   list-style: none;
   margin-top: 40px;
   background-color: ${({ theme }) => theme.backgroundSecondary};
@@ -12,6 +13,7 @@ export const Wrapper = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+
   img {
     position: absolute;
     top: -15px;
@@ -27,11 +29,12 @@ export const DetailsWrapper = styled.div`
   align-items: flex-start;
 `;
 
-export const Date = styled.p`
+export const PostedAt = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.textSecondary};
   flex-basis: 30%;
   position: relative;
+  margin: ${({ isMargin }) => (isMargin ? '16px 0' : '0')};
 
   &::after {
     top: 50%;
@@ -45,8 +48,9 @@ export const Date = styled.p`
   }
 `;
 
-export const WorkingHours = styled(Date)`
+export const WorkingHours = styled(PostedAt)`
   flex-basis: 70%;
+  margin: ${({ isMargin }) => (isMargin ? '16px 0' : '0')};
 
   &::after {
     display: none;
@@ -59,7 +63,7 @@ export const JobPosition = styled.h3`
   margin: 5px 0;
 `;
 
-export const Company = styled(Date)`
+export const Company = styled(PostedAt)`
   flex-basis: 100%;
 
   &::after {
@@ -68,6 +72,8 @@ export const Company = styled(Date)`
 `;
 
 export const Location = styled.p`
+  margin: ${({ isMargin }) => (isMargin ? '16px 0' : '0')};
+  flex-basis: 100%;
   font-weight: 600;
   font-size: 14px;
   color: ${({ theme }) => theme.violet};
