@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   Wrapper,
   DetailsWrapper,
-  Date,
+  PostedAt,
   WorkingHours,
   JobPosition,
   Company,
@@ -17,11 +17,11 @@ const JobAd = ({ details }) => {
     <Wrapper onClick={() => navigate('/details/' + details.company)}>
       <img src={img} alt="logo" />
       <DetailsWrapper>
-        <Date>{details.postedAt}</Date>
-        <WorkingHours>{details.contract}</WorkingHours>
+        <PostedAt isMargin>{details.postedAt}</PostedAt>
+        <WorkingHours isMargin>{details.contract}</WorkingHours>
         <JobPosition>{details.position}</JobPosition>
         <Company>{details.company}</Company>
-        <Location>{details.location}</Location>
+        <Location isMargin>{details.location}</Location>
       </DetailsWrapper>
     </Wrapper>
   );

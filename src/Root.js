@@ -17,7 +17,7 @@ const Root = () => {
         <JobsProvider>
           <Routes>
             <Route path="/" element={<Home handleChangeTheme={handleChangeTheme} />} />
-            <Route path="details/:company" element={<Details />} />
+            <Route path="details/:company" element={<Details handleChangeTheme={handleChangeTheme} />} />
           </Routes>
         </JobsProvider>
       </BrowserRouter>
