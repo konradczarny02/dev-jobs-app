@@ -6,12 +6,12 @@ import JobHeader from 'components/organisms/JobHeader/JobHeader';
 import JobDetails from 'components/organisms/JobDetails/JobDetails';
 import Footer from 'components/organisms/Footer/Footer';
 
-const Details = ({ handleChangeTheme }) => {
+const Details = () => {
   let params = useParams();
   const { jobs } = useContext(JobsContext);
   const job = jobs.find((job) => job.company === params.company);
   return (
-    <MainTemplate handleChangeTheme={handleChangeTheme}>
+    <MainTemplate>
       <JobHeader details={job} />
       <JobDetails details={job} />
       <Footer />

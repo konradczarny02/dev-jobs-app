@@ -3,12 +3,12 @@ import ThemeSwitch from 'components/molecules/ThemeSwitch/ThemeSwitch';
 import { Wrapper, HeaderWrapper } from 'components/organisms/Header/Header.styles';
 import { ReactComponent as Logo } from 'assets/images/Logo.svg';
 
-const Header = ({ handleChangeTheme }) => {
+const Header = () => {
   return (
     <Wrapper>
       <HeaderWrapper>
         <Logo />
-        <ThemeSwitch handleChangeTheme={handleChangeTheme} />
+        <ThemeSwitch />
       </HeaderWrapper>
     </Wrapper>
   );

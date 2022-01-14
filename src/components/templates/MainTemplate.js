@@ -2,10 +2,10 @@ import React from 'react';
 import Header from 'components/organisms/Header/Header';
 import { Wrapper } from 'components/templates/MainTemplates.styles';
 
-const MainTemplate = ({ children, handleChangeTheme }) => {
+const MainTemplate = ({ children }) => {
   return (
     <Wrapper>
-      <Header handleChangeTheme={handleChangeTheme} />
+      <Header />
       {children}
     </Wrapper>
   );

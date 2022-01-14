@@ -3,9 +3,9 @@ import MainTemplate from 'components/templates/MainTemplate';
 import SearchInput from 'components/organisms/SearchInput/SearchInput';
 import JobAdsList from 'components/organisms/JobAdsList/JobAdsList';
 
-const Home = ({ handleChangeTheme }) => {
+const Home = () => {
   return (
-    <MainTemplate handleChangeTheme={handleChangeTheme}>
+    <MainTemplate>
       <SearchInput />
       <JobAdsList />
     </MainTemplate>
