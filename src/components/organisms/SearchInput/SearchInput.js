@@ -14,10 +14,10 @@ import { ReactComponent as LocationIcon } from 'assets/images/location.svg';
 import SearchButton from 'components/atoms/SearchButton/SearchButton';
 
 const SearchInput = () => {
-  const { filters, handleFullTimeFilter, handleTitleFilter, handleLocationFilter } = useContext(JobsContext);
-  console.log(filters);
+  const { filters, handleSearch, handleFullTimeFilter, handleTitleFilter, handleLocationFilter } = useContext(JobsContext);
+
   return (
-    <Wrapper>
+    <Wrapper onSubmit={(event) => handleSearch(event)}>
       <SearchWrapper>
         <SearchIcon />
         <input type="text" placeholder="Filter by title..." onChange={(event) => handleTitleFilter(event.target.value)} />
@@ -31,9 +31,9 @@ const SearchInput = () => {
         <SearchButtonSmall />
       </FilterWrapper>
       <FullTimeWrapper>
-        <input type="checkbox" onChange={(event) => handleFullTimeFilter(event.target.value)} />
+        <input type="checkbox" onChange={handleFullTimeFilter} />
         <h4>Full Time</h4>
-        <SearchButton />
+        <SearchButton type="submit" />
       </FullTimeWrapper>
     </Wrapper>
   );
