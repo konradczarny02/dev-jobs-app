@@ -12,9 +12,11 @@ import { ReactComponent as FilterIcon } from 'assets/images/filterSvg.svg';
 import { ReactComponent as SearchIcon } from 'assets/images/searchIconViolet.svg';
 import { ReactComponent as LocationIcon } from 'assets/images/location.svg';
 import SearchButton from 'components/atoms/SearchButton/SearchButton';
+import { ModalContext } from 'providers/ModalProvider';
 
 const SearchInput = () => {
-  const { filters, handleSearch, handleFullTimeFilter, handleTitleFilter, handleLocationFilter } = useContext(JobsContext);
+  const { handleModalOpen } = useContext(ModalContext);
+  const { handleSearch, handleFullTimeFilter, handleTitleFilter, handleLocationFilter } = useContext(JobsContext);
 
   return (
     <Wrapper onSubmit={(event) => handleSearch(event)}>
