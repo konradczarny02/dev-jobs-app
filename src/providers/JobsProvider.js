@@ -49,7 +49,7 @@ const JobsProvider = ({ children }) => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    let SearchJobs = jobs.filter((job) => {
+    let SearchJobs = allJobs.filter((job) => {
       let fullTime;
       if (filters.fullTime) {
         let fullTime = 'Full Time';
