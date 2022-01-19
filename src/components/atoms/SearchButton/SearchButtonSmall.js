@@ -2,7 +2,8 @@ import React from 'react';
 import { ReactComponent as SearchIcon } from 'assets/images/SearchIcon.svg';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = styled.button`
+  border: none;
   height: 48px;
   width: 48px;
   border-radius: 4px;

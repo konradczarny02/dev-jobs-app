@@ -10,10 +10,22 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+
+  @media (min-width: 1440px) {
+    width: 70%;
+  }
 
   img {
     position: absolute;
     top: -24px;
+
+    @media (min-width: 700px) {
+      top: -25%;
+      left: -10px;
+      transform: translate(0, 0);
+      height: 150%;
+    }
   }
 `;
 

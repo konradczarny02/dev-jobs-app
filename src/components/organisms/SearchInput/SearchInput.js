@@ -29,8 +29,8 @@ const SearchInput = () => {
         <input type="text" placeholder="Filter by location" onChange={(event) => handleLocationFilter(event.target.value)} />
       </LocationWrapper>
       <FilterWrapper>
-        <FilterIcon />
-        <SearchButtonSmall />
+        <FilterIcon onClick={handleModalOpen} />
+        <SearchButtonSmall type="submit" />
       </FilterWrapper>
       <FullTimeWrapper>
         <input type="checkbox" onChange={handleFullTimeFilter} />

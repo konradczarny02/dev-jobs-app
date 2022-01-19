@@ -35,6 +35,7 @@ export const PostedAt = styled.p`
   flex-basis: 30%;
   position: relative;
   margin: ${({ isMargin }) => (isMargin ? '16px 0' : '0')};
+  }
 
   &::after {
     top: 50%;
@@ -72,6 +73,7 @@ export const Company = styled(PostedAt)`
 `;
 
 export const Location = styled.p`
+  position: relative;
   margin: ${({ isMargin }) => (isMargin ? '16px 0' : '0')};
   flex-basis: 100%;
   font-weight: 600;

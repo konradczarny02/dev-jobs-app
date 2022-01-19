@@ -13,6 +13,8 @@ export const JobsContext = React.createContext({
   handleFullTimeFilter: () => {},
   handleLocationFilter: () => {},
   handleTitleFilter: () => {},
+  handleFull: () => {},
+  handleLoc: () => {},
   handleSearch: () => {},
 });
 
@@ -45,6 +47,18 @@ const JobsProvider = ({ children }) => {
 
   const handleTitleFilter = (title) => {
     setFilters({ ...filters, title });
+  };
+
+  const handleLoc = (location) => {
+    setFilters({ ...filters, location });
+  };
+
+  const handleFull = () => {
+    if (filters.fullTime) {
+      setFilters({ ...filters, fullTime: false });
+    } else {
+      setFilters({ ...filters, fullTime: true });
+    }
   };
 
   const handleSearch = (event) => {
@@ -85,6 +99,8 @@ const JobsProvider = ({ children }) => {
         handleLocationFilter,
         handleTitleFilter,
         handleSearch,
+        handleFull,
+        handleLoc,
       }}
     >
       {children}

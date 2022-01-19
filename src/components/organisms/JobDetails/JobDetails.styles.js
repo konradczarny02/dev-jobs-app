@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+
+  @media (min-width: 1440px) {
+    width: 70%;
+  }
 `;
 
 export const Description = styled.p`

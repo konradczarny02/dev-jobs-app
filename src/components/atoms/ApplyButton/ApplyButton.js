@@ -13,4 +13,8 @@ export const ApplyLink = styled.a`
   align-items: center;
   font-weight: 600;
   font-size: 16px;
+
+  @media (min-width: 700px) {
+    width: 150px;
+  }
 `;
