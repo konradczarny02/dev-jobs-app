@@ -10,7 +10,8 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
 
   @media (min-width: 1440px) {
-    width: 70%;
+    min-width: calc(1440px * 0.9);
+    width: 60%;
   }
 `;
 
