@@ -32,21 +32,21 @@ export const DetailsWrapper = styled.div`
 export const PostedAt = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.textSecondary};
-  flex-basis: 30%;
+  flex-basis: ${({ isBig }) => (isBig ? '30%' : '8%')};
   position: relative;
   margin: ${({ isMargin }) => (isMargin ? '16px 0' : '0')};
-  }
+}
 
-  &::after {
-    top: 50%;
-    right: 15%;
-    position: absolute;
-    content: '';
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: ${({ theme }) => theme.textSecondary};
-  }
+&::after {
+  top: 50%;
+  right: 15%;
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.textSecondary};
+}
 `;
 
 export const WorkingHours = styled(PostedAt)`

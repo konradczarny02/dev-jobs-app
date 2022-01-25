@@ -17,7 +17,9 @@ const JobAd = ({ details }) => {
     <Wrapper onClick={() => navigate('/details/' + details.company)}>
       <img src={img} alt="logo" />
       <DetailsWrapper>
-        <PostedAt isMargin>{details.postedAt}</PostedAt>
+        <PostedAt isBig isMargin>
+          {details.postedAt}
+        </PostedAt>
         <WorkingHours isMargin>{details.contract}</WorkingHours>
         <JobPosition>{details.position}</JobPosition>
         <Company>{details.company}</Company>

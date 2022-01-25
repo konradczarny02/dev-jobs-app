@@ -9,19 +9,13 @@ const initialFormState = {
 
 export const JobsContext = React.createContext({
   jobs: [],
-  filters: {},
-  handleFullTimeFilter: () => {},
-  handleLocationFilter: () => {},
-  handleTitleFilter: () => {},
-  handleFull: () => {},
-  handleLoc: () => {},
   handleSearch: () => {},
+  handleSearchModal: () => {},
 });
 
 const JobsProvider = ({ children }) => {
   const [jobs, setJobs] = useState([]);
   const [allJobs, setAllJobs] = useState([]);
-  const [filters, setFilters] = useState(initialFormState);
 
   useEffect(() => {
     axios
@@ -33,51 +27,22 @@ const JobsProvider = ({ children }) => {
       .catch((error) => console.warn(error));
   }, []);
 
-  const handleFullTimeFilter = () => {
-    if (filters.fullTime) {
-      setFilters({ ...filters, fullTime: false });
-    } else {
-      setFilters({ ...filters, fullTime: true });
-    }
-  };
-
-  const handleLocationFilter = (location) => {
-    setFilters({ ...filters, location });
-  };
-
-  const handleTitleFilter = (title) => {
-    setFilters({ ...filters, title });
-  };
-
-  const handleLoc = (location) => {
-    setFilters({ ...filters, location });
-  };
-
-  const handleFull = () => {
-    if (filters.fullTime) {
-      setFilters({ ...filters, fullTime: false });
-    } else {
-      setFilters({ ...filters, fullTime: true });
-    }
-  };
-
-  const handleSearch = (event) => {
-    event.preventDefault();
+  const handleSearch = (data) => {
     let SearchJobs = allJobs.filter((job) => {
       let fullTime;
-      if (filters.fullTime) {
+      if (data.fullTime) {
         let fullTime = 'Full Time';
         if (
-          job.location.toLowerCase().includes(filters.location.toLowerCase()) &&
-          job.position.toLowerCase().includes(filters.title.toLowerCase()) &&
+          job.location.toLowerCase().includes(data.location.toLowerCase()) &&
+          job.position.toLowerCase().includes(data.title.toLowerCase()) &&
           job.contract === fullTime
         ) {
           return job;
         }
       } else {
         if (
-          job.location.toLowerCase().includes(filters.location.toLowerCase()) &&
-          job.position.toLowerCase().includes(filters.title.toLowerCase())
+          job.location.toLowerCase().includes(data.location.toLowerCase()) &&
+          job.position.toLowerCase().includes(data.title.toLowerCase())
         ) {
           return job;
         }
@@ -90,17 +55,19 @@ const JobsProvider = ({ children }) => {
     }
   };
 
+  const handleSearchModal = (data) => {
+    let SearchJobs = allJobs.filter((job) => job.location.toLowerCase().includes(data.location.toLowerCase()));
+    if (SearchJobs) {
+      setJobs(SearchJobs);
+    }
+  };
+
   return (
     <JobsContext.Provider
       value={{
         jobs,
-        filters,
-        handleFullTimeFilter,
-        handleLocationFilter,
-        handleTitleFilter,
         handleSearch,
-        handleFull,
-        handleLoc,
+        handleSearchModal,
       }}
     >
       {children}
