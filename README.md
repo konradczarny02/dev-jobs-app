@@ -19,3 +19,4 @@ Simple App for job posts. The data is faked.
 - [React](https://reactjs.org/ "React") 
 - [Styled Components](https://styled-components.com/ "Styled Components")
 - [MSW](https://mswjs.io/ "MSW")
+- [Axios](https://axios-http.com/docs/intro "Axios")
